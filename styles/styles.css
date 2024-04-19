@@ -10,7 +10,7 @@
     --size: 60px;
     --line: hsl(0 0% 98% / 0.25);
     --dark-color: #101413;
-    --light-color: #ece0c8;
+    --light-color: rgb(236,224,200);
   }
 
   html{
@@ -190,10 +190,48 @@ body {
   border-right: 6px solid transparent;
   border-bottom: 6px solid var(--light-color);
 }
-/* ------------------------------------------- */
-.card{
-  border: 1px solid var(--light-color);
+.back button:hover{
+  transform: translateY(-5px);
 }
+.back{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 2rem; */
+  padding: 1.5rem;
+}
+.back button{
+  padding: 1rem;
+  transition: all .2s ease-in-out;
+}
+button a{
+  padding: 1rem;
+}
+/* ------------------------------------------- */
+.container-cards{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5vw;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  transition: all .2s ease-in-out;
+  border: 1px solid var(--light-color);
+  width: 25vw;
+  height: 75vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(3px);
+  border-radius: 10px;
+}
+.card:hover{
+  scale: 1.02;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+}
+
 
 
 @media (max-width: 1076px) 
