@@ -217,10 +217,12 @@ button a{
 }
 
 .card{
+  transition: all .2s ease-in-out;
   display: flex;
   flex-direction: column;
+  padding: 0 20px;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   gap: 10px;
   transition: all .2s ease-in-out;
   border: 1px solid var(--light-color);
@@ -230,10 +232,61 @@ button a{
   backdrop-filter: blur(3px);
   border-radius: 10px;
 }
+
+.card:before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  border-radius: inherit;
+}
+
+.one:before{
+  background-image: url(cd.jpg);
+  background-size: 210%;
+}
+.two:before{
+  background-image: url(padlock.jpg);
+  background-size: 210%;
+  background-position: 50%;
+}
+.three:before{
+  background-image: url(mobile.jpg);
+  background-size: 210%;
+  background-position: 50%;
+}
+
 .card:hover{
   scale: 1.02;
-  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
+
+.card h1{
+  transition: all .5s ease-in-out;
+  transform: translateY(-100px);
+  opacity: 0;
+}
+.card p{
+  font-size: large;
+  transition: all .5s ease-in-out;
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+.card:hover h1{
+  opacity: 1 !important;
+  transform: translateY(0px);
+}
+.card:hover p{
+  opacity: 1 !important;
+  transform: translateY(0px);
+}
+.card:hover::before{
+  transition: all .2s ease-in-out;
+  opacity: .5;
+}
+
 ul{
   list-style-type: none;
 }
@@ -281,19 +334,47 @@ ul{
 .card{
   width: 80vw;
   height: 25vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: left;
-  gap: 0;
+  gap: 10px;
   font-size: 3vw;
+  font-size: 2vw;
 }
 .card img{
   height: 50%;
   width: 50%;
   aspect-ratio: 1/1;
 }
+
+.card:before{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-size: cover;
+  opacity: .5;
+}
+
+.card h1{
+  opacity: 1;
+  transform: translate(0);
+  font-size: large;
+}
+.card p{
+  border-radius: 5px;
+  transform: translate(0);
+  font-size: large;
+  opacity: 1;
+  overflow: auto;
+  padding-bottom: 5px;
+}
+
  }
 
  @media (max-width: 750px) 
